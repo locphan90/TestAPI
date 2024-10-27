@@ -13,7 +13,7 @@ app.use(express.json());
 app.get('/api/users', async (req, res) => {
   try {
     const pool = await poolPromise;
-    const result = await pool.request().query('SELECT * FROM tbluser'); // Assuming you have a 'Users' table
+    const result = await pool.request().query('SELECT * FROM ticketing'); // Assuming you have a 'Users' table
     res.json(result.recordset);
   } catch (err) {
     res.status(500).send(err.message);
